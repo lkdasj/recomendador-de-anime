@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Animes</title>
+    <link rel="stylesheet" href="lista.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>@import url('https://fonts.googleapis.com/css2?family=Carter+One&display=swap');</style> 
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="img/icono.png" alt="Logo" class="logo-image">
+            <span class="logo-text">Huasito Friki</span>
+        </div>
+        <nav>
+            <button class="menu-button" onclick="toggleMenu()">☰ Menú</button>
+            <div id="menuItems" class="menu-items">
+                <a href="https://lkdasj.github.io/huaso_friki/">Pág principal</a>
+                <button onclick="location.href='index.html'">Anime Random</button>
+                <button onclick="location.href='lista.html'">Lista de Animes</button>
+                <button onclick="location.href='recomendador.html'">Recomendador</button>
+            </div>
+        </nav>
+    </header>
+    <br>
+
+    <div class="container">
+        <h1>Lista de Animes</h1>
+        <!-- Elementos de búsqueda y filtrado -->
+        <div id="animeList">
+            <input type="text" id="searchBox" placeholder="Buscar por nombre de anime" oninput="searchAnime()">
+            <select id="filterComboBox" onchange="filterByLetter()">
+                <option value="" selected>Filtrar por letra</option>
+                <option value="a">A</option>
+                <option value="b">B</option>
+                <option value="c">C</option>
+                <option value="d">D</option>
+                <option value="e">E</option>
+                <option value="f">F</option>
+                <option value="g">G</option>
+                <option value="h">H</option>
+                <option value="i">I</option>
+                <option value="j">J</option>
+                <option value="k">K</option>
+                <option value="l">L</option>
+                <option value="m">M</option>
+                <option value="n">N</option>
+                <option value="ñ">Ñ</option>
+                <option value="o">O</option>
+                <option value="p">P</option>
+                <option value="q">Q</option>
+                <option value="r">R</option>
+                <option value="s">S</option>
+                <option value="t">T</option>
+                <option value="u">U</option>
+                <option value="v">V</option>
+                <option value="w">W</option>
+                <option value="x">X</option>
+                <option value="y">Y</option>
+                <option value="z">Z</option>
+            </select>
+
+            <!-- Lista de animes -->
+            <div id="animeListContent"></div>
+            <div id="noResultsMessage">
+                <img src="img/oops.png" alt="">
+                <p>Ops!... Lo siento</p>
+                <p>No se encontraron resultados</p>
+                <p>ve a recomendar anime si no aparece la animacion que buscas</p>
+            </div>
+
+            <!-- Paginación -->
+            <div id="paginationButtons" class="pagination">
+                <button id="prevPageButton" onclick="changePage(-1)"> << Anterior</button>
+                <span id="currentPage" class="id">1</span>
+                <button id="nextPageButton" onclick="changePage(1)">Siguiente >> </button>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+
+                <div class="footer-section">
+                    <h3>¿Para que se creo esta pagina?</h3>
+                    <p>¡Hola a todos, soy el Huasito Friki! Esta página web se creo con la misión de ayudarte a 
+                        descubrir nuevas animaciones cuando te encuentras en la encrucijada de no saber qué ver. 
+                        La idea surgió de mi deseo de compartir recomendaciones entre todos, para que juntos podamos 
+                        explorar y disfrutar de historias fascinantes y emocionantes.
+                        <br>
+                        Me motiva enormemente ofrecer esta plataforma con cariño para ustedes.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>¿Cómo recomiendo un anime?</h3>
+                    <p>Si sabes el nombre del anime que quieres recomendar, puedes escribirlo en la parte recomendador</p>
+                    <a href="recomendador.html" class="button-link">Aquí puedes recomendar un anime</a>
+
+                    <h3>Redes sociales</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-youtube"></i> YouTube</a>
+                        <a href="#"><i class="fab fa-twitch"></i> Twitch</a>
+                        <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </footer>
+
+    <script src="data.js"></script> <!-- Incluye tu archivo data.js -->
+    <script src="lista.js"></script> <!-- Tu archivo JavaScript para la lista -->
+</body>
+</html>
